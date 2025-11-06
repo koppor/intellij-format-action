@@ -59,7 +59,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /home/runner/work/_temp/_github_workflow/idea-cache
-          key: ${{ runner.os }}-idea-cache
+          key: ${{ runner.os }}-idea-2025.2.4-cache
       - uses: notdevcody/intellij-format-action@v3.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -92,7 +92,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /home/runner/work/_temp/_github_workflow/idea-cache
-          key: ${{ runner.os }}-idea-cache
+          key: ${{ runner.os }}-idea-2025.2.4-cache
       - uses: notdevcody/intellij-format-action@v3.1
         push-type: "commit"
 ```
