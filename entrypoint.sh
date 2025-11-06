@@ -26,8 +26,8 @@ check_idea_version() {
   fi
 }
 
-if [[ $# -ne 8 ]]; then
-  echo "Exactly 8 parameters required: idea-version, path, include-glob, push-type, push-title, push-description, fail-on-changes, style-settings-file, mute-formatter-output"
+if [[ $# -ne 9 ]]; then
+  echo "Exactly 9 parameters required: idea-version, path, include-glob, push-type, push-title, push-description, fail-on-changes, style-settings-file, mute-formatter-output"
   exit 1
 fi
 
