@@ -133,6 +133,11 @@ Unused for commits.<br>
 Fail if any files were changed by the formatter.<br>
 **Default:** `true`
 
+### `idea-version`
+
+Version of IntelliJ IDEA to use.<br>
+**Default:** `2025.2.4`
+
 ### `style-settings-file`
 
 A path to IntelliJ IDEA code style settings .xml file.<br>
