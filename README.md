@@ -124,6 +124,7 @@ The title to use for the commit or pull request.<br>
 **Default:** `IntelliJ Code Format`
 
 ### `push-description`
+
 The description to use for the pull request.<br>
 Unused for commits.<br>
 **Default**: Empty
@@ -136,7 +137,7 @@ Fail if any files were changed by the formatter.<br>
 ### `idea-version`
 
 Version of IntelliJ IDEA to use.<br>
-**Default:** `2025.2.4`
+**Default:** `2025.3`
 
 ### `style-settings-file`
 

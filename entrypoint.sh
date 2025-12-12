@@ -2,7 +2,7 @@
 set -e
 
 download_idea() {
-  wget --no-verbose -O /tmp/idea.tar.gz https://download.jetbrains.com/idea/ideaIC-$idea_version.tar.gz
+  wget --no-verbose -O /tmp/idea.tar.gz https://download.jetbrains.com/idea/idea-$idea_version.tar.gz
   mkdir -p "$IDEA_DIR"
   tar xzf /tmp/idea.tar.gz -C "$IDEA_DIR" --strip-components=1
   rm /tmp/idea.tar.gz
