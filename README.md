@@ -83,13 +83,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: github.event_name != 'pull_request'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.head.ref }}
       - name: Cache IDEA
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: /home/runner/work/_temp/_github_workflow/idea-cache
           key: ${{ runner.os }}-idea-cache
