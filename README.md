@@ -21,13 +21,13 @@ jobs:
   formatting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Cache IDEA
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: /home/runner/work/_temp/_github_workflow/idea-cache
           key: ${{ runner.os }}-idea-cache
-      - uses: notdevcody/intellij-format-action@v3.1
+      - uses: notdevcody/intellij-format-action@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -50,17 +50,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: github.event_name != 'pull_request'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.head.ref }}
       - name: Cache IDEA
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: /home/runner/work/_temp/_github_workflow/idea-cache
           key: ${{ runner.os }}-idea-cache
-      - uses: notdevcody/intellij-format-action@v3.1
+      - uses: notdevcody/intellij-format-action@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -93,7 +93,7 @@ jobs:
         with:
           path: /home/runner/work/_temp/_github_workflow/idea-cache
           key: ${{ runner.os }}-idea-cache
-      - uses: notdevcody/intellij-format-action@v3.1
+      - uses: notdevcody/intellij-format-action@latest
         push-type: "commit"
 ```
 
@@ -137,7 +137,7 @@ Fail if any files were changed by the formatter.<br>
 ### `idea-version`
 
 Version of IntelliJ IDEA to use.<br>
-**Default:** `2025.3`
+**Default:** `2025.2.6`
 
 ### `style-settings-file`
 

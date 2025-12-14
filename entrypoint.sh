@@ -2,7 +2,7 @@
 set -e
 
 download_idea() {
-  wget --no-verbose -O /tmp/idea.tar.gz https://download.jetbrains.com/idea/idea-$idea_version.tar.gz
+  wget --no-verbose -O /tmp/idea.tar.gz https://download.jetbrains.com/idea/ideaIC-$idea_version.tar.gz
   mkdir -p "$IDEA_DIR"
   tar xzf /tmp/idea.tar.gz -C "$IDEA_DIR" --strip-components=1
   rm /tmp/idea.tar.gz
@@ -47,7 +47,7 @@ if [[ "$style_settings_file" != "unset" ]]; then
   style_flags="-s $style_settings_file"
 fi
 
-IDEA_DIR=${IDEA_CACHE_DIR:-"/github/workflow/idea-cache"}
+IDEA_DIR="/github/workflow/idea-cache"
 
 check_idea_version
 
@@ -61,7 +61,7 @@ else
   output_redirect=""
 fi
 
-eval IDEA_JDK="/usr/lib/jvm/java-17-openjdk" "$IDEA_DIR/bin/format.sh" -m "$include_pattern" $style_flags -r . $output_redirect
+eval IDEA_JDK="/usr/lib/jvm/java-21-openjdk" "$IDEA_DIR/bin/format.sh" -m "$include_pattern" $style_flags -r . $output_redirect
 
 changed_files=$(git status --short)
 changed_files_count=$(echo "$changed_files" | grep -v -e '^$' | wc -l)
